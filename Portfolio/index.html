@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mayur | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bento-bg-glow"></div>
+  <div class="clock-widget" id="clock-widget"></div>
+  <main class="dashboard bento-bento-grid">
+    <!-- Analytics Card (Hero/Intro) -->
+    <section class="bento-card analytics-card">
+      <div class="card-header">
+        <span class="card-icon">📈</span>
+        <span class="card-label">Welcome</span>
+      </div>
+      <h2 class="card-title animated-gradient-text">Hey, I'm Mayur!</h2>
+      <p class="card-desc">Building cool things for the web from New Delhi, India.</p>
+      <div class="metric-row">
+        <span class="metric-label">Skills:</span>
+        <span class="metric-value">HTML, CSS, JavaScript</span>
+      </div>
+    </section>
+    <!-- Support Card (Contact) -->
+    <section class="bento-card support-card">
+      <div class="card-header">
+        <span class="card-icon">💬</span>
+        <span class="card-label">Contact</span>
+      </div>
+      <h2 class="card-title">Let's connect!</h2>
+      <div class="contact-details">
+        <div>Email: mayur@email.com</div>
+        <div>Phone: 87448113245</div>
+        <div>Location: New Delhi, India</div>
+      </div>
+      <button class="surprise-btn" onclick="window.location.href='Practice.html'">Click me for surprise</button>
+    </section>
+    <!-- Integrations Card (About/Skills) -->
+    <section class="bento-card integrations-card">
+      <div class="card-header">
+        <span class="card-icon">🛠️</span>
+        <span class="card-label">About Me</span>
+      </div>
+      <h2 class="card-title">Just a bit about me</h2>
+      <p class="card-desc">I love to code, design, and build beautiful websites. Powered by coffee and curiosity.</p>
+      <div class="skills-list">
+        <span>HTML</span> <span>CSS</span> <span>JavaScript</span>
+      </div>
+    </section>
+    <!-- Newsletter Card (Widget + Made by Mayur) -->
+    <section class="bento-card newsletter-card">
+      <div class="card-header">
+        <span class="card-icon">📰</span>
+        <span class="card-label">Widget</span>
+      </div>
+      <h2 class="card-title animated-gradient-text">Fun Zone</h2>
+      <button class="fun-btn" id="fun-btn">
+        <span class="fun-emoji">💙</span> Click for fun
+        <span class="fun-icons">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" title="GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" title="LinkedIn">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" title="Discord">
+          <span title="More">✨</span>
+        </span>
+      </button>
+      <div class="widget-row">
+        <span class="widget-label">Current City:</span>
+        <span class="widget-value">New Delhi</span>
+      </div>
+    </section>
+    <!-- Catch Me Widget (Circle) -->
+    <div class="catchme-circle" id="touchme-widget">
+      <span class="catchme-emoji">🖐️</span>
+    </div>
+  </main>
+  <div class="mayur-pill-badge">
+    <span class="pill-icon">❤️</span> Made by Mayur
+  </div>
+  <button class="emoji-rain-btn" id="emoji-rain-btn"><span class="catchme-emoji">🖐️</span></button>
+  <div id="emoji-rain-container"></div>
+  <script src="cursor.js"></script>
+  <script>
+  // Clock Widget
+  function updateClock() {
+    const clockElement = document.getElementById('clock-widget');
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Dynamic Card Glow on Hover
+  const cards = document.querySelectorAll('.bento-card');
+  const colors = ['#a259f7', '#6d28d9', '#f59e0b', '#ec4899', '#10b981', '#3b82f6'];
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      card.style.setProperty('--glow-color', randomColor);
+    });
+  });
+
+  // Fun feature: Crazy Emoji Rain
+  document.getElementById('emoji-rain-btn').onclick = function() {
+    const emojis = ['🎉','✨','🔥','💜','😎','🚀','🌈','🦄','🥳','💡','🎨','🧠','👾','💻','🌟'];
+    const container = document.getElementById('emoji-rain-container');
+    for (let i = 0; i < 24; i++) {
+      const emoji = document.createElement('span');
+      emoji.className = 'emoji-rain crazy';
+      emoji.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      emoji.style.left = Math.random()*100 + 'vw';
+      emoji.style.animationDelay = (Math.random()*0.3) + 's';
+      emoji.style.fontSize = (1.5 + Math.random()*1.5) + 'rem';
+      emoji.style.transform = `rotate(${Math.random()*360}deg) scale(${0.7 + Math.random()*1.2})`;
+      container.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 1400 + Math.random()*800);
+    }
+  };
+  // Fun button animation: play only once per hover
+  const funBtn = document.getElementById('fun-btn');
+  let funBtnAnimating = false;
+  funBtn.addEventListener('mouseenter', () => {
+    if (!funBtnAnimating) {
+      funBtnAnimating = true;
+      funBtn.classList.add('fun-animate');
+      setTimeout(() => {
+        funBtn.classList.remove('fun-animate');
+        funBtnAnimating = false;
+      }, 1200);
+    }
+  });
+  // Blur Text Animation
+  function animateBlurText() {
+    const title = document.querySelector('.analytics-card .card-title');
+    if (!title) return;
+
+    const text = title.textContent.trim();
+    const words = text.split(' ');
+    title.innerHTML = ''; // Clear original text
+
+    const delayPerWord = 200; // ms
+
+    words.forEach((word, index) => {
+      const wordSpan = document.createElement('span');
+      wordSpan.className = 'blur-text-word';
+      wordSpan.textContent = word;
+      wordSpan.style.animationDelay = `${index * delayPerWord / 1000}s`;
+      
+      title.appendChild(wordSpan);
+
+      if (index < words.length - 1) {
+        title.appendChild(document.createTextNode(' '));
+      }
+    });
+  }
+  animateBlurText();
+  // Touch Me Widget: run away on hover
+  const touchMe = document.getElementById('touchme-widget');
+  touchMe.addEventListener('mouseenter', () => {
+    const grid = document.querySelector('.dashboard.bento-bento-grid');
+    const maxX = grid.offsetWidth - touchMe.offsetWidth;
+    const maxY = grid.offsetHeight - touchMe.offsetHeight;
+    const randX = Math.random() * maxX;
+    const randY = Math.random() * maxY;
+    touchMe.style.position = 'absolute';
+    touchMe.style.left = randX + 'px';
+    touchMe.style.top = randY + 'px';
+    touchMe.style.transition = 'left 0.4s cubic-bezier(0.68,-0.55,0.265,1.55), top 0.4s cubic-bezier(0.68,-0.55,0.265,1.55)';
+  });
+  // Make icons blend overlay mode
+  document.querySelectorAll('.fun-btn .fun-icons img').forEach(icon => {
+    icon.style.mixBlendMode = 'overlay';
+  });
+  </script>
+</body>
+</html> 
