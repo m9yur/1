@@ -1,0 +1,454 @@
+{
+  "designSystem": {
+    "metadata": {
+      "name": "Mayur",
+      "location": "Delhi, India",
+      "bio": "Passionate about design and building innovative solutions",
+      "interests": ["design", "building stuff", "creative development", "modern interfaces"],
+      "style": "Modern Dashboard Card Design System",
+      "version": "2.0",
+      "theme": "Glassmorphic Dashboard Components"
+    },
+    "colorPalette": {
+      "primary": {
+        "background": "#0f0a1a",
+        "backgroundSecondary": "#1a1128",
+        "backgroundTertiary": "#241835",
+        "cardBackground": "rgba(45, 35, 65, 0.4)"
+      },
+      "gradients": {
+        "primary": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "secondary": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+        "accent": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+        "warm": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+        "cool": "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+        "dark": "linear-gradient(135deg, #2d1b69 0%, #11998e 100%)"
+      },
+      "accent": {
+        "purple": "#8b5cf6",
+        "blue": "#3b82f6",
+        "green": "#10b981",
+        "orange": "#f59e0b",
+        "pink": "#ec4899",
+        "cyan": "#06b6d4"
+      },
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#e2e8f0",
+        "muted": "#94a3b8",
+        "disabled": "#64748b"
+      },
+      "interactive": {
+        "hover": "rgba(139, 92, 246, 0.1)",
+        "focus": "rgba(59, 130, 246, 0.2)",
+        "border": "rgba(255, 255, 255, 0.1)",
+        "borderHover": "rgba(255, 255, 255, 0.2)"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "heading": "Satoshi, Inter, sans-serif",
+        "mono": "JetBrains Mono, Fira Code, monospace"
+      },
+      "scale": {
+        "cardTitle": {
+          "fontSize": "1.125rem",
+          "fontWeight": "600",
+          "lineHeight": "1.4",
+          "letterSpacing": "-0.01em"
+        },
+        "cardSubtitle": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500",
+          "lineHeight": "1.3",
+          "color": "#94a3b8"
+        },
+        "metric": {
+          "fontSize": "2rem",
+          "fontWeight": "700",
+          "lineHeight": "1.2",
+          "letterSpacing": "-0.02em"
+        },
+        "label": {
+          "fontSize": "0.75rem",
+          "fontWeight": "500",
+          "lineHeight": "1.2",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em"
+        },
+        "body": {
+          "fontSize": "0.875rem",
+          "fontWeight": "400",
+          "lineHeight": "1.5"
+        }
+      }
+    },
+    "spacing": {
+      "scale": [2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64],
+      "cardPadding": {
+        "small": "1rem",
+        "medium": "1.5rem",
+        "large": "2rem"
+      },
+      "grid": {
+        "gap": "1.5rem",
+        "columns": {
+          "mobile": "1fr",
+          "tablet": "repeat(2, 1fr)",
+          "desktop": "repeat(auto-fit, minmax(300px, 1fr))"
+        }
+      }
+    },
+    "layout": {
+      "dashboard": {
+        "maxWidth": "1400px",
+        "margin": "0 auto",
+        "padding": "2rem",
+        "gap": "2rem"
+      },
+      "cardGrid": {
+        "display": "grid",
+        "gridTemplateColumns": "repeat(auto-fit, minmax(280px, 1fr))",
+        "gap": "1.5rem",
+        "autoRows": "min-content"
+      }
+    },
+    "components": {
+      "cards": {
+        "base": {
+          "background": "rgba(45, 35, 65, 0.4)",
+          "backdropFilter": "blur(20px)",
+          "border": "1px solid rgba(255, 255, 255, 0.1)",
+          "borderRadius": "16px",
+          "padding": "1.5rem",
+          "position": "relative",
+          "overflow": "hidden",
+          "transition": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "hover": {
+          "transform": "translateY(-8px) scale(1.02)",
+          "borderColor": "rgba(255, 255, 255, 0.2)",
+          "boxShadow": "0 25px 50px rgba(139, 92, 246, 0.15)",
+          "background": "rgba(45, 35, 65, 0.6)"
+        },
+        "variants": {
+          "analytics": {
+            "background": "linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%)"
+          },
+          "support": {
+            "background": "linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)"
+          },
+          "integration": {
+            "background": "linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)"
+          },
+          "newsletter": {
+            "background": "linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)"
+          }
+        }
+      },
+      "icons": {
+        "container": {
+          "width": "40px",
+          "height": "40px",
+          "borderRadius": "12px",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "background": "rgba(255, 255, 255, 0.1)",
+          "marginBottom": "1rem",
+          "transition": "all 0.3s ease"
+        },
+        "hover": {
+          "background": "rgba(255, 255, 255, 0.2)",
+          "transform": "scale(1.1)"
+        }
+      },
+      "metrics": {
+        "container": {
+          "display": "flex",
+          "alignItems": "baseline",
+          "gap": "0.5rem",
+          "marginBottom": "0.5rem"
+        },
+        "value": {
+          "fontSize": "2rem",
+          "fontWeight": "700",
+          "color": "#ffffff"
+        },
+        "change": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500",
+          "padding": "0.25rem 0.5rem",
+          "borderRadius": "6px",
+          "background": "rgba(16, 185, 129, 0.2)",
+          "color": "#10b981"
+        }
+      },
+      "charts": {
+        "container": {
+          "height": "80px",
+          "marginTop": "1rem",
+          "position": "relative"
+        },
+        "line": {
+          "stroke": "#8b5cf6",
+          "strokeWidth": "3",
+          "fill": "none",
+          "filter": "drop-shadow(0 0 8px rgba(139, 92, 246, 0.4))"
+        }
+      },
+      "integrations": {
+        "grid": {
+          "display": "grid",
+          "gridTemplateColumns": "repeat(4, 1fr)",
+          "gap": "0.75rem",
+          "marginTop": "1rem"
+        },
+        "item": {
+          "width": "48px",
+          "height": "48px",
+          "borderRadius": "12px",
+          "background": "rgba(255, 255, 255, 0.05)",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "transition": "all 0.3s ease",
+          "cursor": "pointer"
+        },
+        "itemHover": {
+          "background": "rgba(255, 255, 255, 0.1)",
+          "transform": "scale(1.1)"
+        }
+      },
+      "chat": {
+        "bubble": {
+          "background": "rgba(255, 255, 255, 0.1)",
+          "padding": "0.75rem 1rem",
+          "borderRadius": "18px",
+          "marginTop": "1rem",
+          "display": "flex",
+          "alignItems": "center",
+          "gap": "0.75rem"
+        },
+        "avatar": {
+          "width": "32px",
+          "height": "32px",
+          "borderRadius": "50%",
+          "background": "linear-gradient(135deg, #667eea, #764ba2)"
+        }
+      }
+    },
+    "cursor": {
+      "default": {
+        "background": "radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.2) 70%, transparent 100%)",
+        "width": "20px",
+        "height": "20px",
+        "borderRadius": "50%",
+        "position": "fixed",
+        "pointerEvents": "none",
+        "zIndex": 9999,
+        "transition": "all 0.15s ease-out",
+        "mixBlendMode": "difference"
+      },
+      "hover": {
+        "transform": "scale(1.5)",
+        "background": "radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.2) 70%, transparent 100%)"
+      },
+      "click": {
+        "transform": "scale(0.8)",
+        "background": "radial-gradient(circle, rgba(236, 72, 153, 1) 0%, rgba(236, 72, 153, 0.3) 70%, transparent 100%)"
+      }
+    },
+    "animations": {
+      "transitions": {
+        "fast": "0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "medium": "0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "slow": "0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce": "0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+      },
+      "keyframes": {
+        "fadeInUp": {
+          "0%": {
+            "opacity": "0",
+            "transform": "translateY(40px)"
+          },
+          "100%": {
+            "opacity": "1",
+            "transform": "translateY(0)"
+          }
+        },
+        "scaleIn": {
+          "0%": {
+            "opacity": "0",
+            "transform": "scale(0.9)"
+          },
+          "100%": {
+            "opacity": "1",
+            "transform": "scale(1)"
+          }
+        },
+        "slideInLeft": {
+          "0%": {
+            "opacity": "0",
+            "transform": "translateX(-40px)"
+          },
+          "100%": {
+            "opacity": "1",
+            "transform": "translateX(0)"
+          }
+        },
+        "float": {
+          "0%, 100%": {
+            "transform": "translateY(0px)"
+          },
+          "50%": {
+            "transform": "translateY(-10px)"
+          }
+        },
+        "glow": {
+          "0%, 100%": {
+            "boxShadow": "0 0 20px rgba(139, 92, 246, 0.3)"
+          },
+          "50%": {
+            "boxShadow": "0 0 40px rgba(139, 92, 246, 0.6)"
+          }
+        },
+        "shimmer": {
+          "0%": {
+            "backgroundPosition": "-200% center"
+          },
+          "100%": {
+            "backgroundPosition": "200% center"
+          }
+        }
+      },
+      "hover": {
+        "cardLift": {
+          "transform": "translateY(-8px) scale(1.02)",
+          "transition": "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "iconBounce": {
+          "transform": "scale(1.1) rotate(5deg)",
+          "transition": "all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+        },
+        "glowEffect": {
+          "boxShadow": "0 0 30px rgba(139, 92, 246, 0.4)",
+          "borderColor": "rgba(139, 92, 246, 0.6)"
+        }
+      }
+    },
+    "effects": {
+      "glassmorphism": {
+        "background": "rgba(45, 35, 65, 0.4)",
+        "backdropFilter": "blur(20px)",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "borderRadius": "16px"
+      },
+      "gradientBorder": {
+        "background": "linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3))",
+        "padding": "1px",
+        "borderRadius": "16px"
+      },
+      "neonGlow": {
+        "boxShadow": "0 0 20px rgba(139, 92, 246, 0.3), inset 0 0 20px rgba(139, 92, 246, 0.1)"
+      },
+      "shimmerEffect": {
+        "background": "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent)",
+        "backgroundSize": "200% 100%",
+        "animation": "shimmer 2s infinite"
+      }
+    },
+    "interactivity": {
+      "hover": {
+        "cards": "Lift with scale and glow effect",
+        "buttons": "Scale with color transition",
+        "icons": "Bounce with rotation",
+        "metrics": "Subtle glow animation"
+      },
+      "focus": {
+        "outline": "2px solid rgba(139, 92, 246, 0.5)",
+        "outlineOffset": "2px"
+      },
+      "active": {
+        "transform": "scale(0.98)",
+        "transition": "transform 0.1s ease"
+      }
+    },
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "designPrinciples": {
+      "depth": {
+        "rule": "Use layered glassmorphism with varying opacity levels",
+        "implementation": "Multiple backdrop-blur layers with gradient overlays"
+      },
+      "motion": {
+        "rule": "Smooth, purposeful animations that enhance UX",
+        "implementation": "Cubic-bezier easing with staggered delays"
+      },
+      "hierarchy": {
+        "rule": "Clear visual hierarchy through size, color, and positioning",
+        "implementation": "Graduated text sizes, strategic use of accent colors"
+      },
+      "interactivity": {
+        "rule": "Responsive feedback for all interactive elements",
+        "implementation": "Hover states, custom cursor, micro-interactions"
+      },
+      "consistency": {
+        "rule": "Consistent spacing, colors, and interaction patterns",
+        "implementation": "Design tokens and systematic component approach"
+      }
+    },
+    "contentStructure": {
+      "cardTypes": {
+        "analytics": {
+          "icon": "Chart/Analytics icon",
+          "title": "Descriptive title",
+          "metric": "Large number/value",
+          "change": "Percentage change indicator",
+          "chart": "Mini visualization"
+        },
+        "feature": {
+          "icon": "Feature-specific icon",
+          "title": "Feature name",
+          "description": "Brief description",
+          "cta": "Action button or link"
+        },
+        "integration": {
+          "icon": "Integration symbol",
+          "title": "Integration name",
+          "logos": "Partner/tool logos grid",
+          "status": "Connection status"
+        },
+        "communication": {
+          "icon": "Communication icon",
+          "title": "Feature title",
+          "preview": "Content preview",
+          "avatar": "User avatar"
+        }
+      }
+    },
+    "implementation": {
+      "customCursor": {
+        "javascript": "Track mouse movement and update cursor position",
+        "states": "Default, hover, click states with smooth transitions",
+        "blendMode": "Use mix-blend-mode for visual effect"
+      },
+      "cardAnimations": {
+        "entrance": "Staggered fade-in-up animation",
+        "hover": "Lift and glow effect",
+        "exit": "Smooth fade-out"
+      },
+      "responsiveGrid": {
+        "mobile": "Single column stack",
+        "tablet": "Two column grid",
+        "desktop": "Auto-fit grid with minimum card width"
+      }
+    }
+  }
+}
