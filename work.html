@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purple Photo Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2e003e;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e0b3ff;
+      margin: 20px 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 200, 255, 0.6);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Purple Themed Photo Gallery</h1>
+
+  <div class="gallery">
+    <img src="https://picsum.photos/300/200?random=1" alt="Photo 1">
+    <img src="https://picsum.photos/300/200?random=2" alt="Photo 2">
+    <img src="https://picsum.photos/300/200?random=3" alt="Photo 3">
+    <img src="https://picsum.photos/300/200?random=4" alt="Photo 4">
+    <img src="https://picsum.photos/300/200?random=5" alt="Photo 5">
+    <img src="https://picsum.photos/300/200?random=6" alt="Photo 6">
+    <img src="https://picsum.photos/300/200?random=7" alt="Photo 7">
+    <img src="https://picsum.photos/300/200?random=8" alt="Photo 8">
+    <img src="https://picsum.photos/300/200?random=9" alt="Photo 9">
+  </div>
+
+</body>
+</html>
